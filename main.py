@@ -104,9 +104,9 @@ for sdl in sdl_embeddings[:split]:
 
 # If using a vivit model, load the precomputed vivit outputs
 if model_type == "vivit":
-  video_urls = list(load_bddx_csv("./data/BDDX.csv")['InputVideo'])
+  video_urls = list(load_bddx_csv("./data/BDD-X-Annotations_v1.csv")['InputVideo'])
   pattern = re.compile("/[^/]+/\w+-\w+\.mov")
-  vivit_data_dir = "./post_vivit"
+  vivit_data_dir = "./vivit_processed"
 
 dist = BCELoss_ClassWeights
 optimizer = torch.optim.Adam(MODEL.parameters(), lr=lr)
